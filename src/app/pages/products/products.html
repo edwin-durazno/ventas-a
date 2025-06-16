@@ -13,13 +13,24 @@
 </section>
 
 <!-- 🔽 Modal fuera del section -->
-<div class="modal" *ngIf="productoSeleccionado">
-  <div class="modal-contenido">
-    <span class="cerrar" (click)="cerrarDetalles()">&times;</span>
-    <h2>{{ productoSeleccionado?.nombre }}</h2>
-    <img [src]="productoSeleccionado?.imagen" [alt]="productoSeleccionado?.nombre">
-    <p>{{ productoSeleccionado?.descripcion }}</p>
-    <p><strong>Precio:</strong> {{ productoSeleccionado?.precio }}</p>
-    <p><strong>Detalles:</strong> {{ productoSeleccionado?.detalles }}</p>
+<!-- Modal de detalles -->
+<div class="modal-overlay" *ngIf="productoSeleccionado" (click)="cerrarDetalles()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="modal-close" (click)="cerrarDetalles()">&times;</button>
+    
+    <h2 class="modal-title">{{ productoSeleccionado.nombre }}</h2>
+    <img [src]="productoSeleccionado.imagen" [alt]="productoSeleccionado.nombre" class="modal-image">
+    
+    <div class="modal-body">
+      <p class="modal-description">{{ productoSeleccionado.descripcion }}</p>
+      <p class="modal-price">{{ productoSeleccionado.precio | currency:'USD':'symbol':'1.2-2' }}</p>
+      
+      <div *ngIf="productoSeleccionado.detalles" class="modal-details">
+        <h4>Detalles adicionales:</h4>
+        <p>{{ productoSeleccionado.detalles }}</p>
+      </div>
+    </div>
+    
+    <button class="modal-button" (click)="cerrarDetalles()">Cerrar</button>
   </div>
 </div>
