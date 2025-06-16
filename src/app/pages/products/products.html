@@ -1,0 +1,25 @@
+<h1>Nuestros productos</h1>
+<img src="assets/img/adorno1.jpeg" alt="Moto">
+
+<section class="productos">
+  <article class="producto" *ngFor="let producto of productos">
+    <img [src]="producto.imagen" [alt]="producto.nombre">
+    <h3>{{ producto.nombre }}</h3>
+    <p>{{ producto.descripcion }}</p>
+    <strong>{{ producto.precio }}</strong>
+    <br>
+    <button (click)="abrirDetalles(producto)">Ver más</button>
+  </article>
+</section>
+
+<!-- 🔽 Modal fuera del section -->
+<div class="modal" *ngIf="productoSeleccionado">
+  <div class="modal-contenido">
+    <span class="cerrar" (click)="cerrarDetalles()">&times;</span>
+    <h2>{{ productoSeleccionado?.nombre }}</h2>
+    <img [src]="productoSeleccionado?.imagen" [alt]="productoSeleccionado?.nombre">
+    <p>{{ productoSeleccionado?.descripcion }}</p>
+    <p><strong>Precio:</strong> {{ productoSeleccionado?.precio }}</p>
+    <p><strong>Detalles:</strong> {{ productoSeleccionado?.detalles }}</p>
+  </div>
+</div>
