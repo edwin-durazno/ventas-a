@@ -6,31 +6,41 @@
     <img [src]="producto.imagen" [alt]="producto.nombre">
     <h3>{{ producto.nombre }}</h3>
     <p>{{ producto.descripcion }}</p>
-    <strong>{{ producto.precio }}</strong>
+    <strong>{{ producto.precio | currency:'USD':'symbol' }}</strong>
     <br>
     <button (click)="abrirDetalles(producto)">Ver más</button>
+    <button (click)="agregarAlCarrito(producto)">Agregar al carrito</button>
   </article>
 </section>
 
-<!-- 🔽 Modal fuera del section -->
-<!-- Modal de detalles -->
+<!-- Modal detalles -->
 <div class="modal-overlay" *ngIf="productoSeleccionado" (click)="cerrarDetalles()">
   <div class="modal-content" (click)="$event.stopPropagation()">
     <button class="modal-close" (click)="cerrarDetalles()">&times;</button>
-    
     <h2 class="modal-title">{{ productoSeleccionado.nombre }}</h2>
     <img [src]="productoSeleccionado.imagen" [alt]="productoSeleccionado.nombre" class="modal-image">
-    
     <div class="modal-body">
       <p class="modal-description">{{ productoSeleccionado.descripcion }}</p>
       <p class="modal-price">{{ productoSeleccionado.precio | currency:'USD':'symbol':'1.2-2' }}</p>
-      
       <div *ngIf="productoSeleccionado.detalles" class="modal-details">
         <h4>Detalles adicionales:</h4>
         <p>{{ productoSeleccionado.detalles }}</p>
       </div>
     </div>
-    
     <button class="modal-button" (click)="cerrarDetalles()">Cerrar</button>
   </div>
+</div>
+
+<div class="carrito">
+  <h2>Carrito de compras</h2>
+  <div *ngIf="carrito.length === 0">Tu carrito está vacío.</div>
+  <ul *ngIf="carrito.length > 0">
+    <li *ngFor="let item of carrito">
+      {{ item.producto.nombre }} - {{ item.cantidad }} x {{ item.producto.precio | currency:'USD' }}
+      <button (click)="eliminarDelCarrito(item.producto.id)">Eliminar</button>
+    </li>
+  </ul>
+  <p *ngIf="carrito.length > 0">
+    Total: {{ totalCarrito | currency:'USD':'symbol' }}
+  </p>
 </div>
