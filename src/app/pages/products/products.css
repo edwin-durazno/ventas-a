@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: #0c0101;
 }
 
 .container {
@@ -16,12 +16,12 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
-  background-color: #333;
+  background-color: #01e2a2;
   padding: 15px 0;
 }
 
 .nav-link {
-  color: white;
+  color: rgb(14, 176, 246);
   text-decoration: none;
   margin: 0 20px;
   font-weight: bold;
@@ -29,7 +29,7 @@ body {
 }
 
 .nav-link.active {
-  color: #ffcc00;
+  color: #f47608;
 }
 
 /* Títulos */
@@ -61,7 +61,7 @@ body {
 
 /* Tarjetas de producto */
 .product-card {
-  background-color: white;
+  background-color: rgb(11, 10, 10);
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -70,12 +70,12 @@ body {
 
 .product-title {
   font-size: 22px;
-  color: #333;
+  color: #3908cb;
   margin-bottom: 10px;
 }
 
 .product-description {
-  color: #666;
+  color: #05466b;
   margin-bottom: 15px;
 }
 
@@ -87,8 +87,8 @@ body {
 }
 
 .product-button {
-  background-color: #3498db;
-  color: white;
+  background-color: #b6bc06;
+  color: rgb(237, 6, 199);
   border: none;
   padding: 10px 20px;
   border-radius: 4px;
@@ -98,7 +98,7 @@ body {
 }
 
 .product-button:hover {
-  background-color: #2980b9;
+  background-color: #d6e504;
 }
 
 /* Modal */
@@ -116,7 +116,7 @@ body {
 }
 
 .modal-content {
-  background-color: white;
+  background-color: rgb(14, 13, 13);
   border-radius: 8px;
   padding: 30px;
   max-width: 600px;
@@ -134,7 +134,7 @@ body {
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #666;
+  color: #be0404;
 }
 
 .modal-title {
@@ -154,7 +154,7 @@ body {
 }
 
 .modal-description {
-  color: #666;
+  color: #fa486c;
   margin-bottom: 15px;
 }
 
@@ -167,7 +167,7 @@ body {
   position: fixed;
   top: 20px;
   left: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(66, 104, 229, 0.9);
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -187,21 +187,21 @@ body {
 .login-box input {
   padding: 5px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #141313;
   border-radius: 4px;
 }
 
 .login-box button {
   padding: 6px;
-  background-color: #333;
-  color: white;
+  background-color: #5da0ba;
+  color: rgb(9, 9, 9);
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .login-box button:hover {
-  background-color: #555;
+  background-color: #048975;
 }
 
 .login-toggle {
@@ -213,15 +213,15 @@ body {
 
 .login-toggle button {
   padding: 6px 12px;
-  background-color: #008cba;
-  color: white;
+  background-color: #a44bae;
+  color: rgb(8, 7, 7);
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
 
 .login-toggle button:hover {
-  background-color: #006f98;
+  background-color: #5dd010;
 }
 
 /* Ya tienes esto pero lo agrego por claridad */
@@ -229,10 +229,10 @@ body {
   position: fixed;
   top: 60px; /* debajo del botón */
   left: 20px;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(16, 15, 15, 0.95);
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(252, 249, 249, 0.2);
   z-index: 1000;
 }
 
@@ -240,11 +240,11 @@ body {
   position: fixed;
   top: 1rem;
   right: 1rem;
-  background: white;
-  border: 1px solid #ccc;
+  background: rgb(13, 12, 12);
+  border: 1px solid #080808;
   padding: 1rem;
   max-width: 300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(250, 248, 248, 0.2);
 }
 .carrito h2 {
   margin-top: 0;
