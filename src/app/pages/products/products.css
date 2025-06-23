@@ -1,10 +1,13 @@
+/* Cambiar fondo general y texto */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: #121212; /* negro elegante */
+  color: #f5e942; /* amarillo elegante */
 }
 
+/* Ajustar container para contraste */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -16,12 +19,12 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
-  background-color: #333;
+  background-color: #000; /* negro más profundo */
   padding: 15px 0;
 }
 
 .nav-link {
-  color: white;
+  color: #f5e942;
   text-decoration: none;
   margin: 0 20px;
   font-weight: bold;
@@ -29,15 +32,17 @@ body {
 }
 
 .nav-link.active {
-  color: #ffcc00;
+  color: #fff176; /* un amarillo más claro para active */
 }
 
-/* Títulos */
-.main-title {
-  text-align: center;
-  font-size: 28px;
+/* Títulos: usa una fuente serif elegante */
+.main-title,
+.product-title,
+.modal-title {
+  font-family: 'Georgia', serif; /* elegante para títulos */
+  color: #f5e942;
+  font-weight: bold;
   margin-bottom: 30px;
-  color: #333;
 }
 
 /* Imagen destacada */
@@ -50,6 +55,7 @@ body {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
+  border: 2px solid #f5e942; /* borde amarillo */
 }
 
 /* Grid de productos */
@@ -61,34 +67,31 @@ body {
 
 /* Tarjetas de producto */
 .product-card {
-  background-color: white;
+  background-color: #1e1e1e; /* gris oscuro para contraste */
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px #f5e942aa;
   text-align: center;
+  color: #f5e942;
 }
 
-.product-title {
-  font-size: 22px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
+/* Descripciones y precios */
 .product-description {
-  color: #666;
+  color: #ddd;
   margin-bottom: 15px;
 }
 
 .product-price {
   font-size: 20px;
   font-weight: bold;
-  color: #2c3e50;
+  color: #f5e942;
   margin-bottom: 15px;
 }
 
+/* Botones */
 .product-button {
-  background-color: #3498db;
-  color: white;
+  background-color: #f5e942;
+  color: #121212;
   border: none;
   padding: 10px 20px;
   border-radius: 4px;
@@ -98,7 +101,8 @@ body {
 }
 
 .product-button:hover {
-  background-color: #2980b9;
+  background-color: #fff176;
+  color: #121212;
 }
 
 /* Modal */
@@ -108,7 +112,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(18, 18, 18, 0.85); /* semitransparente negro */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,7 +120,7 @@ body {
 }
 
 .modal-content {
-  background-color: white;
+  background-color: #1e1e1e;
   border-radius: 8px;
   padding: 30px;
   max-width: 600px;
@@ -124,6 +128,8 @@ body {
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
+  color: #f5e942;
+  box-shadow: 0 0 15px #f5e942bb;
 }
 
 .modal-close {
@@ -134,44 +140,31 @@ body {
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #666;
-}
-
-.modal-title {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.modal-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  color: #f5e942;
 }
 
 .modal-description {
-  color: #666;
+  color: #ddd;
   margin-bottom: 15px;
 }
 
 .modal-price {
   font-size: 24px;
-  font-weight: bold
+  font-weight: bold;
+  color: #f5e942;
 }
 
+/* Login box */
 .login-box {
   position: fixed;
   top: 20px;
   left: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #1e1e1e;
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px #f5e942aa;
   z-index: 1000;
+  color: #f5e942;
 }
 
 .login-box form {
@@ -182,74 +175,57 @@ body {
 .login-box label {
   font-weight: bold;
   margin-top: 5px;
+  color: #f5e942;
 }
 
 .login-box input {
   padding: 5px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #f5e942;
   border-radius: 4px;
+  background-color: #121212;
+  color: #f5e942;
 }
 
 .login-box button {
   padding: 6px;
-  background-color: #333;
-  color: white;
+  background-color: #f5e942;
+  color: #121212;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .login-box button:hover {
-  background-color: #555;
+  background-color: #fff176;
 }
 
-.login-toggle {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
-}
-
-.login-toggle button {
-  padding: 6px 12px;
-  background-color: #008cba;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.login-toggle button:hover {
-  background-color: #006f98;
-}
-
-/* Ya tienes esto pero lo agrego por claridad */
-.login-box {
-  position: fixed;
-  top: 60px; /* debajo del botón */
-  left: 20px;
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-}
-
+/* Carrito */
 .carrito {
   position: fixed;
   top: 1rem;
   right: 1rem;
-  background: white;
-  border: 1px solid #ccc;
+  background: #1e1e1e;
+  border: 1px solid #f5e942;
   padding: 1rem;
   max-width: 300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px #f5e942bb;
+  color: #f5e942;
 }
+
 .carrito h2 {
   margin-top: 0;
 }
-.carrito button {
-  margin-left: 10px;
-}
 
+/* Scrollbar oscuro (opcional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #f5e942;
+  border-radius: 10px;
+  border: 2px solid #121212;
+}
