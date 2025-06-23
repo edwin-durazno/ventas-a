@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Product } from '../../services/products';
 import { Products } from '../../services/products';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Para [(ngModel)]
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 interface ItemCarrito {
   producto: Product;
@@ -12,9 +13,9 @@ interface ItemCarrito {
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './products.html',
-  styleUrl: './products.css'
+  styleUrls: ['./products.css'],
 })
 export class Productos {
   productos: Product[] = [];
@@ -25,7 +26,6 @@ export class Productos {
     this.productos = this.productService.getProducts();
   }
 
-  // Modal
   abrirDetalles(producto: Product) {
     this.productoSeleccionado = producto;
   }
@@ -34,9 +34,8 @@ export class Productos {
     this.productoSeleccionado = null;
   }
 
-  // Carrito
   agregarAlCarrito(producto: Product) {
-    const item = this.carrito.find((item) => item.producto.id === producto.id);
+    const item = this.carrito.find(item => item.producto.id === producto.id);
     if (item) {
       item.cantidad++;
     } else {
@@ -52,10 +51,9 @@ export class Productos {
     return this.carrito.reduce((acc, item) => acc + item.producto.precio * item.cantidad, 0);
   }
 
-  // Login (si decides conservarlo)
-  mostrarLogin: boolean = false;
-  usuario: string = '';
-  contrasena: string = '';
+  mostrarLogin = false;
+  usuario = '';
+  contrasena = '';
 
   iniciarSesion() {
     if (this.usuario === 'admin' && this.contrasena === '1234') {
@@ -66,4 +64,3 @@ export class Productos {
     }
   }
 }
-
